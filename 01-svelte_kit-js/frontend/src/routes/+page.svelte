@@ -1,6 +1,4 @@
 <script>
-	import { set_attributes } from "svelte/internal";
-
     export let data;
     console.log(data)
     const posts = data.data.data;
@@ -10,6 +8,6 @@
 <h1>Fetching Data</h1>
 
 {#each posts as post}
-<h2>{post.attributes.title}</h2>
-<p>{post.attributes.description}</p>
+    <h2>{post.attributes.title}</h2>
+    <p>{post.attributes.description}</p>
 {/each}

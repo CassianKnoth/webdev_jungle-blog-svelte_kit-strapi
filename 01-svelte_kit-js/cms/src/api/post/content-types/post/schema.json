@@ -20,10 +20,6 @@
     "description": {
       "type": "text"
     },
-    "content": {
-      "type": "richtext",
-      "required": true
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
@@ -33,6 +29,14 @@
     "Slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "blogContent": {
+      "type": "dynamiczone",
+      "components": [
+        "blog-content.blog-text",
+        "blog-content.blog-code"
+      ],
+      "required": true
     }
   }
 }

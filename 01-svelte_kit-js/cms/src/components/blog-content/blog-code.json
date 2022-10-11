@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blog_content_blog_codes",
+  "info": {
+    "displayName": "blogCode",
+    "icon": "terminal",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

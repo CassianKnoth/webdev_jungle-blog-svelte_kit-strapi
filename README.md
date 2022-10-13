@@ -4,6 +4,6 @@
 
 2. Rebuild with `TypeScript`
 
-3. Add `Windi css`
+3. Add `Windi CSS`
 
 ## let's 👀 ...

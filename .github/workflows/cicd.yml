@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: "16.9"
       - name: Go to frontend
-        run: cd frontend
+        run: cd ./01-svelte_kit-js/frontend
       - name: Install dependencies
         run: yarn install
       - name: Build frontend

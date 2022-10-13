@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build-frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./01-svelte_kit-js/frontend
 
     steps:
       - uses: actions/checkout@v3
@@ -12,13 +15,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-      # - name: Go to frontend
-      #   run: cd ./01-svelte_kit-js/frontend
       - name: Install dependencies
-        run: |
-          cd ./01-svelte_kit-js/frontend
-          yarn install
+        run: yarn install
       - name: Build frontend
-        run: |
-          cd ./01-svelte_kit-js/frontend
-          yarn build
+        run: yarn build

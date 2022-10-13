@@ -17,9 +17,6 @@
       "required": true,
       "unique": true
     },
-    "description": {
-      "type": "text"
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
@@ -37,6 +34,9 @@
         "blog-content.blog-code"
       ],
       "required": true
+    },
+    "subline": {
+      "type": "text"
     }
   }
 }

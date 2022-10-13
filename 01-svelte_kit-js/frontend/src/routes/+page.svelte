@@ -1,25 +1,37 @@
 <script>
+  import { attr, set_attributes } from "svelte/internal";
   import Entry from "../lib/components/blog/Entry.svelte";
   import Nav from "../lib/components/blog/Nav.svelte";
 
   export let data;
-  console.log(data);
+  console.log("data raw: ", data);
   const posts = data.entries;
-  console.log(posts);
+  console.log("data posts: ", posts);
 </script>
 
 <div class="blogWrapper">
-  <Nav />
-  {#each posts as post}
-    <Entry
-      headline={post.attributes.title}
-      timestamp={{
-        creation: post.attributes.createdAt,
-        edit: post.attributes.updatedAt,
-      }}
-      paragraphs={post.attributes.blogContent}
-    />
-  {/each}
+  <Nav
+    postTitles={posts.map((post) => {
+      return {
+        title: post.attributes.title,
+        subline: post.attributes.subline,
+        id: post.id,
+      };
+    })}
+  />
+  <section class="blogEntries">
+    {#each posts as post}
+      <Entry
+        idForScrolling={post.id}
+        headline={post.attributes.title}
+        timestamp={{
+          creation: post.attributes.createdAt,
+          edit: post.attributes.updatedAt,
+        }}
+        paragraphs={post.attributes.blogContent}
+      />
+    {/each}
+  </section>
 </div>
 
 <style>
@@ -33,7 +45,7 @@
     min-height: 100vh;
   }
 
-  @media only screen and (min-width: 850px) {
+  @media only screen and (min-width: 1000px) {
     .blogWrapper {
       grid-template-columns: 2fr minmax(0, 5fr);
     }

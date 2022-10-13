@@ -1,6 +1,7 @@
 <script>
   import Code from "./Code.svelte";
 
+  export let idForScrolling = "";
   export let headline = "";
   export let timestamp = {
     creation: "2022",
@@ -24,7 +25,7 @@
   };
 </script>
 
-<article class="blogEntry blogEntryWrapper">
+<article id={`post-${idForScrolling}`} class="blogEntry">
   <h1>{headline}</h1>
   <hr />
   <p class="blogDate monospace">
@@ -66,7 +67,7 @@
     margin-bottom: 2rem;
   }
 
-  .blogEntry > *:not(:last-child) {
+  .blogEntry > :global(*):not(:last-child) {
     margin-bottom: 1rem;
   }
 
@@ -82,5 +83,10 @@
 
   p {
     line-height: 200%;
+  }
+
+  .blogDate {
+    font-size: 0.8rem;
+    color: var(--color-shy);
   }
 </style>

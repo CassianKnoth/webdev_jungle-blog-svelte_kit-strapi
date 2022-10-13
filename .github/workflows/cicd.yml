@@ -16,5 +16,7 @@ jobs:
         run: cd ./01-svelte_kit-js/frontend
       - name: Install dependencies
         run: yarn install
+      - name: location check
+        run: pwd
       - name: Build frontend
         run: yarn build

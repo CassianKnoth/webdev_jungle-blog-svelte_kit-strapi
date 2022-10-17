@@ -24,9 +24,9 @@ jobs:
   build-cms:
     name: build-cms
     runs-on: ubuntu-latest
-      defaults:
-        run:
-          working-directory: ./01-svelte_kit-js/cms
+    defaults:
+      run:
+        working-directory: ./01-svelte_kit-js/cms
 
       steps:
         - uses: actions/checkout@v3

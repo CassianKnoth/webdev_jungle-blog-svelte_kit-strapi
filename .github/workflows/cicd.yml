@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   build-frontend:
+    name: build-frontend
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -21,6 +22,7 @@ jobs:
         run: yarn build
 
   build-cms:
+    name: build-cms
     runs-on: ubuntu-latest
       defaults:
         run:

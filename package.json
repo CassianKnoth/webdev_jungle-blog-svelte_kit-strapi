@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^1.1.2"
+  }
+}

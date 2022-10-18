@@ -46,7 +46,7 @@
   {#each paragraphs as paragraph}
     {#if paragraph.__component === "blog-content.blog-text"}
       <p>
-        {paragraph.content}
+        {@html paragraph.content}
       </p>
     {:else}
       <Code content={paragraph.content} />

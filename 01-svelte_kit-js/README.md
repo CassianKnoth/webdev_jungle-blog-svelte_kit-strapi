@@ -1,1 +1,1 @@
-# 01. `SvelteKit` with `JacaScript` and Strapi 🙂👍
+# 01. `SvelteKit` with `JavaScript` and Strapi 🙂👍

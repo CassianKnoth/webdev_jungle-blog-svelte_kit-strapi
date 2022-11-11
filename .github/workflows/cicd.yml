@@ -36,5 +36,5 @@ jobs:
           node-version: "16.x"
       - name: Install dependencies
         run: yarn install
-      - name: Build frontend
+      - name: Build cms
         run: yarn build

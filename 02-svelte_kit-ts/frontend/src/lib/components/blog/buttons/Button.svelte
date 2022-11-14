@@ -5,15 +5,16 @@
   export let label = "give me a name!";
   export let invert = false;
   export let disabled = false;
-  const handleClick = (event) => {
+  const handleClick = (event: MouseEvent) => {
     dispatch("handleClick");
-    event.target.blur();
+    // blur() to reset :focus from CSS
+    (event.target as HTMLElement).blur();
   };
 </script>
 
 <button
   type="button"
-  class={`button ${invert ? "buttonInvert" : ""}`}
+  class={`button${invert ? " buttonInvert" : ""}`}
   {disabled}
   on:click={handleClick}>{label}</button
 >

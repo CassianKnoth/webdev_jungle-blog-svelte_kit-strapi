@@ -1,15 +1,22 @@
 <script lang="ts">
   import Code from "./Code.svelte";
 
-  export let idForScrolling = "";
-  export let headline = "";
-  export let timestamp = {
-    creation: "2022",
-    edit: "2022",
-  };
-  export let paragraphs = [];
+  export let idForScrolling: number;
+  export let headline: string;
+  interface Timestamp {
+    creation: string;
+    edit: string;
+  }
+  export let timestamp: Timestamp;
 
-  const getTimeStamp = (date) => {
+  interface Paragprahs {
+    id: number;
+    __component: string;
+    content: string;
+  }
+  export let paragraphs: Paragprahs[];
+
+  const getTimeStamp = (date: string) => {
     let datefromString = new Date(date);
     return {
       visible: `${datefromString.toLocaleDateString([], {

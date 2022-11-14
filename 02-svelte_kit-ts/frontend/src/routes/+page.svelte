@@ -1,9 +1,24 @@
-<script>
-  import { attr, set_attributes } from "svelte/internal";
+<script lang="ts">
   import Entry from "../lib/components/blog/Entry.svelte";
   import Nav from "../lib/components/blog/Nav.svelte";
 
-  export let data;
+  interface Entries {
+    id: number;
+    attributes: {
+      Slug: string | null;
+      blogContent: {
+        id: number;
+        __component: string;
+        content: string;
+      }[];
+      createdAt: string;
+      updatedAt: string | null;
+      title: string;
+      subline: string | null;
+    };
+  }
+
+  export let data: { entries: Entries[] };
   console.log("data raw: ", data);
   const posts = data.entries;
   console.log("data posts: ", posts);

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from "./buttons/Button.svelte";
 
-  export let content = "";
+  export let content: string;
 
   const copyCode = () => {
     navigator.clipboard.writeText(content);

@@ -1,6 +1,12 @@
 <script lang="ts">
   import NavLink from "$lib/components/links/NavLink.svelte";
-  export let postTitles = [];
+
+  type PostTitles = {
+    title: string;
+    subline: string;
+    id: number;
+  };
+  export let postTitles: PostTitles[];
   console.log("post titles: ", postTitles);
 </script>
 

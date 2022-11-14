@@ -1,8 +1,8 @@
 <script lang="ts">
   export let destination = "/";
-  export let title = "";
+  export let title: string;
   export let target = "_self";
-  export let subline = "";
+  export let subline: string | undefined;
 
   const scrollIntoView = () => {
     const scrollTo = document.querySelector(destination);

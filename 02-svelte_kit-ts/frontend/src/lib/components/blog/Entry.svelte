@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Code from "./Code.svelte";
 
   export let idForScrolling = "";

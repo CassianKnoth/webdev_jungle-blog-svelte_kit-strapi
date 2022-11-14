@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Link from "$lib/components/links/Link.svelte";
   const linkData = {
     destination: "/",

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import NavLink from "$lib/components/links/NavLink.svelte";
   export let postTitles = [];
   console.log("post titles: ", postTitles);

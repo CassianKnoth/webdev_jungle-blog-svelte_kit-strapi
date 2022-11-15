@@ -2,31 +2,33 @@
   import Entry from "../lib/components/blog/Entry.svelte";
   import Nav from "../lib/components/blog/Nav.svelte";
 
-  interface Entries {
-    id: number;
-    attributes: {
-      Slug: string | null;
-      blogContent: {
-        id: number;
-        __component: string;
-        content: string;
-      }[];
-      createdAt: string;
-      updatedAt: string | null;
-      title: string;
-      subline: string | null;
-    };
-  }
+  import type { PageServerData } from "./$types";
 
-  export let data: { entries: Entries[] };
+  // interface Entries {
+  //   id: number;
+  //   attributes: {
+  //     Slug: string | null;
+  //     blogContent: {
+  //       id: number;
+  //       __component: string;
+  //       content: string;
+  //     }[];
+  //     createdAt: string;
+  //     updatedAt: string | null;
+  //     title: string;
+  //     subline: string | null;
+  //   };
+  // }
+
+  // export let data: { entries: Entries[] };
+  export let data: PageServerData;
   console.log("data raw: ", data);
-  const posts = data.entries;
-  console.log("data posts: ", posts);
+  console.log("data data.entries: ", data.entries);
 </script>
 
 <div class="blogWrapper">
   <Nav
-    postTitles={posts.map((post) => {
+    postTitles={data.entries.map((post) => {
       return {
         title: post.attributes.title,
         subline: post.attributes.subline,
@@ -35,7 +37,7 @@
     })}
   />
   <section class="blogEntries">
-    {#each posts as post}
+    {#each data.entries as post}
       <Entry
         idForScrolling={post.id}
         headline={post.attributes.title}

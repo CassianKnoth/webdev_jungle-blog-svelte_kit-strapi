@@ -4,23 +4,6 @@
 
   import type { PageServerData } from "./$types";
 
-  // interface Entries {
-  //   id: number;
-  //   attributes: {
-  //     Slug: string | null;
-  //     blogContent: {
-  //       id: number;
-  //       __component: string;
-  //       content: string;
-  //     }[];
-  //     createdAt: string;
-  //     updatedAt: string | null;
-  //     title: string;
-  //     subline: string | null;
-  //   };
-  // }
-
-  // export let data: { entries: Entries[] };
   export let data: PageServerData;
   console.log("data raw: ", data);
   console.log("data data.entries: ", data.entries);
@@ -58,7 +41,6 @@
     column-gap: var(--gap);
     row-gap: 2rem;
     padding: var(--gap);
-    background-color: var(--color-pastel);
     min-height: 100vh;
   }
 

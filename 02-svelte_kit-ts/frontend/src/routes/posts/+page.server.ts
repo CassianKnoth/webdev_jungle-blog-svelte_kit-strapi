@@ -16,11 +16,12 @@ import type { PageServerLoad } from './$types';
     };
   }
 
-export const load: PageServerLoad = async ({ fetch }) => {
-  const res = await fetch(
-    `${import.meta.env.VITE_CMS_URL}/api/posts?populate=*`
-    );
-    const entries = await res.json();
-    console.log("fetch: ", entries);
-  return { entries: entries.data as Entries[] };
+export const load: PageServerLoad = ({ fetch }) => {
+    const fetchPosts = async () => {
+        const res = await fetch('/api/posts');
+          const entries = await res.json();
+          console.log("fetch: ", await entries);
+          return entries.data as Entries[];
+    }
+  return { entries: fetchPosts()  };
 };

@@ -13,8 +13,7 @@ GENERAL
 }
 
 body {
-  /* slide 1 background bug (chrome) hack */
-  background-color: #001000;
+  background-color: var(--color-pastel);
 }
 
 /*

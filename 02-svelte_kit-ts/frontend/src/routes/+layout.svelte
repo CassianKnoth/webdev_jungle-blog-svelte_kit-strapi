@@ -13,5 +13,6 @@
 <style>
   main {
     min-height: 100vh;
+    padding: var(--gap);
   }
 </style>

@@ -40,7 +40,6 @@
     grid-template-columns: 100%;
     column-gap: var(--gap);
     row-gap: 2rem;
-    padding: var(--gap);
     min-height: 100vh;
   }
 
